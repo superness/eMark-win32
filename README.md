@@ -5,8 +5,8 @@ Building for Win32 on Windows:
 This build process uses a vcxproj to build and manages dependencies with vcpkg
 
 ## Tools used ##
-https://visualstudio.microsoft.com/vs/community/
-https://learn.microsoft.com/en-us/vcpkg/
+  - https://visualstudio.microsoft.com/vs/community/
+  - https://learn.microsoft.com/en-us/vcpkg/
 
 ## Build process
  1) Open the emark-cli.vcxproj file @ src/emark-cli.vcxproj
