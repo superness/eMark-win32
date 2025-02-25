@@ -451,7 +451,7 @@ const unsigned char vchMaxModHalfOrder[32] = {
     0xDF,0xE9,0x2F,0x46,0x68,0x1B,0x20,0xA0
 };
 
-#ifdef WIN32
+#if defined(_MSC_VER)
 const unsigned char* vchZero = NULL;
 #else
 const unsigned char vchZero[0] = {};
