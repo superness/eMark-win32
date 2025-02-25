@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="addrman.cpp" />
+    <ClCompile Include="alert.cpp" />
+    <ClCompile Include="bitcoind.cpp" />
+    <ClCompile Include="bloom.cpp" />
+    <ClCompile Include="chainparams.cpp" />
+    <ClCompile Include="checkpoints.cpp" />
+    <ClCompile Include="core.cpp" />
+    <ClCompile Include="crypter.cpp" />
+    <ClCompile Include="db.cpp" />
+    <ClCompile Include="hash.cpp" />
+    <ClCompile Include="init.cpp" />
+    <ClCompile Include="kernel.cpp" />
+    <ClCompile Include="key.cpp" />
+    <ClCompile Include="keystore.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="miner.cpp" />
+    <ClCompile Include="net.cpp" />
+    <ClCompile Include="netbase.cpp" />
+    <ClCompile Include="noui.cpp" />
+    <ClCompile Include="pbkdf2.cpp" />
+    <ClCompile Include="protocol.cpp" />
+    <ClCompile Include="rpcblockchain.cpp" />
+    <ClCompile Include="rpcclient.cpp" />
+    <ClCompile Include="rpcdump.cpp" />
+    <ClCompile Include="rpcmining.cpp" />
+    <ClCompile Include="rpcmisc.cpp" />
+    <ClCompile Include="rpcnet.cpp" />
+    <ClCompile Include="rpcprotocol.cpp" />
+    <ClCompile Include="rpcrawtransaction.cpp" />
+    <ClCompile Include="rpcserver.cpp" />
+    <ClCompile Include="rpcwallet.cpp" />
+    <ClCompile Include="script.cpp" />
+    <ClCompile Include="sync.cpp" />
+    <ClCompile Include="timedata.cpp" />
+    <ClCompile Include="txdb-leveldb.cpp" />
+    <ClCompile Include="txmempool.cpp" />
+    <ClCompile Include="util.cpp" />
+    <ClCompile Include="version.cpp" />
+    <ClCompile Include="wallet.cpp" />
+    <ClCompile Include="walletdb.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="addrman.h" />
+    <ClInclude Include="alert.h" />
+    <ClInclude Include="allocators.h" />
+    <ClInclude Include="arith_uint256.h" />
+    <ClInclude Include="base58.h" />
+    <ClInclude Include="bignum.h" />
+    <ClInclude Include="bloom.h" />
+    <ClInclude Include="chainparams.h" />
+    <ClInclude Include="chainparamsseeds.h" />
+    <ClInclude Include="checkpoints.h" />
+    <ClInclude Include="clientversion.h" />
+    <ClInclude Include="coincontrol.h" />
+    <ClInclude Include="compat.h" />
+    <ClInclude Include="core.h" />
+    <ClInclude Include="crypter.h" />
+    <ClInclude Include="db.h" />
+    <ClInclude Include="hash.h" />
+    <ClInclude Include="init.h" />
+    <ClInclude Include="kernel.h" />
+    <ClInclude Include="key.h" />
+    <ClInclude Include="keystore.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="miner.h" />
+    <ClInclude Include="mruset.h" />
+    <ClInclude Include="net.h" />
+    <ClInclude Include="netbase.h" />
+    <ClInclude Include="pbkdf2.h" />
+    <ClInclude Include="protocol.h" />
+    <ClInclude Include="rpcclient.h" />
+    <ClInclude Include="rpcprotocol.h" />
+    <ClInclude Include="rpcserver.h" />
+    <ClInclude Include="script.h" />
+    <ClInclude Include="serialize.h" />
+    <ClInclude Include="strlcpy.h" />
+    <ClInclude Include="sync.h" />
+    <ClInclude Include="threadsafety.h" />
+    <ClInclude Include="timedata.h" />
+    <ClInclude Include="tinyformat.h" />
+    <ClInclude Include="txdb-leveldb.h" />
+    <ClInclude Include="txdb.h" />
+    <ClInclude Include="txmempool.h" />
+    <ClInclude Include="uint256.h" />
+    <ClInclude Include="ui_interface.h" />
+    <ClInclude Include="util.h" />
+    <ClInclude Include="version.h" />
+    <ClInclude Include="wallet.h" />
+    <ClInclude Include="walletdb.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vcpkg.json" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{81501188-41ed-4684-a1e0-cfd7a5d0767e}</ProjectGuid>
+    <RootNamespace>emarkcli</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(IncludePath);$(ProjectDir);$(ProjectDir)\leveldb\helpers</IncludePath>
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)\leveldb\helpers\memenv;</ExternalIncludePath>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);OPENSSL_SUPPRESS_DEPRECATED;_CRT_SECURE_NO_WARNINGS;ENABLE_WALLET;</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

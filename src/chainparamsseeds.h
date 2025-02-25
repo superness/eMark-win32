@@ -5,6 +5,10 @@
 
 // Each line contains a 16-byte IPv6 address and a port.
 // IPv4 as well as onion addresses are wrapped inside a IPv6 address accordingly.
+#ifdef WIN32
+static SeedSpec6* pnSeed6_main = NULL;
+static SeedSpec6* pnSeed6_test = NULL;
+#else
 static SeedSpec6 pnSeed6_main[] = {
     // {{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xff,0x2d,0x8e,0xb0,0xac}, 5556}, // 45.142.176.172
     // {{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xff,0x49,0xd4,0xbc,0x95}, 5556}, // 73.212.188.149
@@ -23,4 +27,5 @@ static SeedSpec6 pnSeed6_main[] = {
 static SeedSpec6 pnSeed6_test[] = {
 
 };
+#endif
 #endif

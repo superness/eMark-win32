@@ -347,8 +347,8 @@ public:
         const BIGNUM *s;
         r = BN_secure_new();
         s = BN_secure_new();
-        BIGNUM *r1;
-        BIGNUM *s1;
+        BIGNUM *r1 = NULL;
+        BIGNUM *s1 = NULL;
         ECDSA_SIG_get0(sig, &r, &s);
         BN_bin2bn(&p64[0],  32, r1);
         BN_bin2bn(&p64[32], 32, s1);
@@ -451,7 +451,11 @@ const unsigned char vchMaxModHalfOrder[32] = {
     0xDF,0xE9,0x2F,0x46,0x68,0x1B,0x20,0xA0
 };
 
+#ifdef WIN32
+const unsigned char* vchZero = NULL;
+#else
 const unsigned char vchZero[0] = {};
+#endif
 
 }; // end of anonymous namespace
 

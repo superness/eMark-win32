@@ -123,7 +123,7 @@ Value getmininginfo(const Array& params, bool fHelp)
     return obj;
 }
 
-extern int nStakeTargetSpacing;
+extern unsigned int nStakeTargetSpacing;
 Value getstakinginfo(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 0)

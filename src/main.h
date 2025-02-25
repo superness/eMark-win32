@@ -5,6 +5,18 @@
 #ifndef BITCOIN_MAIN_H
 #define BITCOIN_MAIN_H
 
+#if defined(__GNUC__) || defined(__clang__)
+#define __PRETTY_FUNCTION__ __PRETTY_FUNCTION__
+#elif defined(_MSC_VER)
+#define __PRETTY_FUNCTION__ __FUNCSIG__
+#else
+#define __PRETTY_FUNCTION__ __func__
+#endif
+
+#if defined(_MSC_VER)
+typedef int ssize_t;
+#endif
+
 #include "core.h"
 #include "bignum.h"
 #include "sync.h"

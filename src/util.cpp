@@ -19,6 +19,7 @@
 #include <boost/algorithm/string/join.hpp>
 #include <boost/algorithm/string/predicate.hpp> // for startswith() and endswith()
 
+#ifndef WIN32
 // Work around clang compilation problem in Boost 1.46:
 // /usr/include/boost/program_options/detail/config_file.hpp:163:17: error: call to function 'to_internal' that is neither visible in the template definition nor found by argument-dependent lookup
 // See also: http://stackoverflow.com/questions/10020179/compilation-fail-in-boost-librairies-program-options
@@ -28,6 +29,7 @@ namespace boost {
         std::string to_internal(const std::string&);
     }
 }
+#endif
 
 #include <boost/program_options/detail/config_file.hpp>
 #include <boost/program_options/parsers.hpp>
@@ -1019,7 +1021,7 @@ void ClearDatadirCache()
 boost::filesystem::path GetConfigFile()
 {
     boost::filesystem::path pathConfigFile(GetArg("-conf", "eMark.conf"));
-    if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
+    if (!pathConfigFile.is_absolute()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
 
@@ -1052,7 +1054,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 boost::filesystem::path GetPidFile()
 {
     boost::filesystem::path pathPidFile(GetArg("-pid", "eMarkd.pid"));
-    if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
+    if (!pathPidFile.is_absolute()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }
 
@@ -1098,7 +1100,7 @@ void ShrinkDebugFile()
     {
         // Restart the file with some of the end
         char pch[200000];
-        fseek(file, -sizeof(pch), SEEK_END);
+        fseek(file, -static_cast<long>(sizeof(pch)), SEEK_END);
         int nBytes = fread(pch, 1, sizeof(pch), file);
         fclose(file);
 

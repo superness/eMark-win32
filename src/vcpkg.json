@@ -1,0 +1,11 @@
+{
+  "name": "emark-project",
+  "version-string": "1.0",
+  "dependencies": [
+    "boost",
+    "openssl",
+    "berkeleydb",
+    "leveldb"
+  ],
+  "builtin-baseline": "6f29f12e82a8293156836ad81cc9bf5af41fe836"
+}
