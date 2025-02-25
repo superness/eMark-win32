@@ -1,5 +1,22 @@
-# Deutsche eMark [DEM] #
+# Deutsche eMark [DEM] - For Windows On Windows #
 
+Building for Win32 on Windows:
+====================
+This build process uses a vcxproj to build and manages dependencies with vcpkg
+
+## Tools used ##
+https://visualstudio.microsoft.com/vs/community/
+https://learn.microsoft.com/en-us/vcpkg/
+
+## Build process
+ 1) Open the emark-cli.vcxproj file @ src/emark-cli.vcxproj
+ 2) Build and run
+
+### Notes on implementation ###
+  - Several typedefs implemented to attempt to maintain non-msc-compiler support
+  - Logical changes for compatability with Win32
+  - Update usages of boost where deprecated
+ 
 ### Version 2.1.0 ###
   - The obsolete Alert System was removed and deactivated, as it represented a central point of failure.
   - Added DNS Seeders ( fixes #86 )
