@@ -17,6 +17,11 @@ This build process uses a vcxproj to build and manages dependencies with vcpkg
   - Logical changes for compatability with Win32
   - Update usages of boost where deprecated
  
+
+
+
+# Deutsche eMark [DEM] #
+
 ### Version 2.1.0 ###
   - The obsolete Alert System was removed and deactivated, as it represented a central point of failure.
   - Added DNS Seeders ( fixes #86 )
